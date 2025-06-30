@@ -1,0 +1,6 @@
+def concat_array(nums):
+    ans = []
+    for i in range(2):
+        for j in nums:
+            ans.append(j)
+    return ans
