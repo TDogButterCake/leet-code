@@ -1,9 +1,7 @@
 class BrowserHistory:
 
     def __init__(self, homepage: str):
-        self.history = [homepage]  # Store all visited URLs
-        self.curr = 0  # Pointer to current page
-        self.last = 0  # Farthest forward you can go (clears if you visit)
+        self.history = [homepage]
 
     def visit(self, url: str) -> None:
         self.curr += 1
@@ -11,7 +9,7 @@ class BrowserHistory:
             self.history.append(url)
         else:
             self.history[self.curr] = url
-        self.last = self.curr  # visiting a new URL clears forward history
+        self.last = self.curr
 
     def back(self, steps: int) -> str:
         self.curr = max(0, self.curr - steps)
