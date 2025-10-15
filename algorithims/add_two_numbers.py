@@ -28,3 +28,19 @@ class Solution:
                 l2 = l2.next
 
         return dummy.next
+
+def get_first_uncommon_index(s):
+    i = 0
+    while True:
+        if len(s[0]) == i:
+            return i
+        letter = s[0][i]
+        for word in s[1:]:
+            if len(word) == i:
+                return i
+            if word[i] != letter:
+                return i
+        i += 1
+
+def get_common_prefix(strings):
+    return strings[0][:get_first_uncommon_index(strings)]
